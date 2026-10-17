@@ -1,0 +1,467 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    background-color: rgb(247, 243, 245);
+    background-image: radial-gradient(circle at 50% 40%, rgb(255, 240, 234) 0%, rgb(246, 236, 245) 60%, rgb(238, 223, 250) 100%);
+    background-attachment: fixed;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+body.dark {
+    background-color: rgb(16, 12, 16);
+    background-image: radial-gradient(circle at 50% 40%, rgb(36, 22, 33) 0%, rgb(18, 14, 20) 60%, rgb(11, 9, 12) 100%);
+    background-attachment: fixed;
+    color: rgb(232, 230, 230);
+}
+
+label {
+    font-size: 14px;
+}
+
+strong {
+    font-size: 28px;
+}
+
+b {
+    font-size: 16px;
+    margin-right: 8px;
+    color: rgb(160, 157, 157);
+}
+
+p {
+    font-size: 18px;
+}
+
+.other {
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    padding: 20px;
+    gap: 15px;
+    padding: 10px 50px 20px 50px;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    margin: 0 50px;
+}
+
+.header p {
+    font-size: 14px;
+}
+
+.header img {
+    width: 16px;
+    height: 16px;
+}
+
+.menu {
+    height: auto;
+    padding: 15px;
+    width: 20%;
+    background: white;
+}
+
+body.dark .menu {
+    background: rgb(57, 57, 57);
+    color: rgb(232, 230, 230);
+}
+
+.menu strong, .menu b {
+    display: block;
+}
+
+.menu progress, .menu input {
+    width: 100%;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.asideTitle {
+    margin-bottom: 100px;
+    font-size: 14px;
+}
+
+.incomeBox {
+    display: flex;
+    height: 30px;
+    align-items: center;
+    background: white;
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+}
+
+body.dark .incomeBox {
+    background: rgb(57, 57, 57);
+}
+
+.incomeBoth input {
+    outline: none;
+    border: none;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+body.dark .incomeBoth input {
+    background: rgb(57, 57, 57);
+    color: rgb(255, 255, 255);
+}
+
+.incomeBoth:has(input:focus) .incomeBox,
+.incomeBoth:has(input:focus) #incomeDescription {
+    box-shadow: 0 0 0 200vmax rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+#incomeDescription {
+    position: relative;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: white;
+    z-index: 1;
+}
+
+body.dark #incomeDescription {
+    background: rgb(57, 57, 57);
+}
+
+.budgets {
+    display: flex;
+    position: relative;
+    height: 30px;
+    align-items: center;
+    z-index: 1;
+    border-radius: 10px;
+    margin-bottom: 200px;
+    background: white;
+}
+
+.budgets:has(input:focus-within) {
+    box-shadow: 0 0 0 200vmax rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+.main {
+    width: 150%;
+    height: auto;
+}
+
+.greeting {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.greeting button {
+    background: white;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    height: 50px;
+    margin-right: 10px;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+    "top-l top-m top-r"
+    "mid-l mid-l mid-r"
+    "bottom bottom bottom";
+    min-height: 100vh;
+    gap: 15px;
+    width: 100%;
+}
+
+.top-left {
+    grid-area: top-l;
+}
+
+.top-left b {
+    color: green;
+}
+
+.top-middle {
+    grid-area: top-m;
+}
+
+.top-middle b {
+    color: green;
+}
+
+.top-right {
+    grid-area: top-r;
+}
+
+.top-right b {
+    color: red;
+}
+
+.middle-left {
+    grid-area: mid-l;
+    height: 100%;
+    background: white;
+}
+
+body.dark .middle-left {
+    background: rgb(57, 57, 57);
+    color: rgb(232, 230, 230);
+}
+
+.barchart {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    overflow-x: auto;
+    height: 80%;
+    gap: 5px;
+    border-bottom: 1px solid rgb(229, 225, 225);
+}
+
+.middle-right {
+    grid-area: mid-r;
+    background: white;
+}
+
+body.dark .middle-right {
+    background: rgb(57, 57, 57);
+    color: rgb(232, 230, 230);
+}
+
+.bottom {
+    grid-area: bottom;
+    height: 100%;
+    background: white;
+    margin-bottom: 50px;
+}
+
+body.dark .bottom {
+    background: rgb(57, 57, 57);
+    color: rgb(232, 230, 230);
+}
+
+.menu, .info, .middle-right, .middle-left, .bottom {
+    border-radius: 10px;
+    border: none;
+}
+
+.menu {
+    width: 25%;
+}
+
+.chart p, .chart strong {
+    margin-bottom: 10px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 0;
+    padding: 10px;
+    background: white;
+}
+
+body.dark .info {
+    background: rgb(57, 57, 57);
+    color: rgb(232, 230, 230);
+}
+
+.bar {
+    height: 100%;
+    width: 100%;
+    background: steelblue;
+}
+
+.spending {
+    width: calc(100% / 31);
+    height: 20%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: end;
+    position: relative;
+}
+
+.daily {
+    color: rgb(64, 64, 218);
+    order: 1;
+    display: none;
+}
+
+body.dark .daily {
+    color: rgb(156, 209, 77);
+}
+
+.bar {
+    order: 2;
+}
+
+.numDay {
+    order: 3;
+    margin-bottom: 20px;
+}
+
+.bar:hover {
+    filter: brightness(0.8);
+}
+
+.bar:hover + .daily {
+    display: block;
+}
+
+.addexpense {
+    display: none;
+    flex-direction: column;
+    width: 400px;
+    margin: 0 auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 15px;
+    box-shadow: 0 0 0 200vmax rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.addexpense input, .addexpense button, .addexpense select {
+    height: 40px;
+    margin-bottom: 15px;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.addheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.addheader img {
+    width: 14px;
+    height: 14px;
+}
+
+.bottom {
+    padding: 20px;
+}
+
+.categories, .category {
+    display: flex;
+}
+
+.category {
+    justify-content: space-between;
+}
+
+.categories {
+    column-gap: 15px;
+    margin-top: auto;
+}
+
+.chart {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    width: 100%;
+}
+
+.wrapper progress {
+    min-width: 0;
+    width: 100%;
+}
+
+.overviewheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 15px;
+}
+
+#monthSelector {
+    height: 40px;
+    border: 1px solid rgb(222, 220, 220);
+    background: white;
+    border-radius: 10px;
+}
+
+#budget {
+    min-width: 0;
+    width: 100%;
+    overflow-wrap: break-word;
+}
+
+.budgets input {
+    outline: none;
+    border: none;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+body.dark .budgets {
+    background: rgb(57, 57, 57);
+    color: whitesmoke;
+}
+
+#expenseDate {
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    height: 30px;
+    border-radius: 10px;
+}
+
+body.dark #expenseDate {
+    background: rgb(57, 57, 57);
+    color: rgb(232, 230, 230);
+    outline: none;
+    border: none;
+}

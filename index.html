@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Expense Tracker</title>
+</head>
+
+<body>
+    <div class="other">
+        <header class="header">
+            <p>EXPENSE TRACKER</p>
+            <img src="icon-moon.png" alt="" id="theme">
+        </header>
+        <main class="container">
+            <aside class="menu">
+                <div class="asideItems">
+                    <p class="asideTitle">EXPENSE TRACKER</p>
+                    <div class="incomeBoth">
+                        <label for="">Income Label</label>
+                        <input type="text" name="" id="incomeDescription">
+                        <label for="">Enter Income</label>
+                        <div class="incomeBox">
+                            <b>$</b><input type="text" name="" id="income">
+                        </div>
+                        <label for="">Enter Budget</label>
+                        <div class="budgets">
+                            <b>$</b><input type="text" name="" id="budgetamount">
+                        </div>
+                    </div>
+                    <label for="">YOUR ACCOUNT</label>
+                    <p>Monthly Budget</p>
+                    <strong id="budget">$0.00</strong>
+                    <b id="percentbudget">68% used</b>
+                    <progress value="68" max="100" id="budgetvalue"></progress>
+                </div>
+            </aside>
+            <div class="main">
+                <div class="greeting">
+                    <div>
+                        <h1>Good Evening, Brian</h1>
+                        <p>Here's how your money is looking this month.</p>
+                    </div>
+                    <div>
+                        <label for="">Add Date</label>
+                        <input type="date" name="" id="expenseDate">
+                    </div>
+                    <button id="add">+ Add Expense</button>
+                </div>
+                <div class="layout">
+                    <div class="chart info top-left">
+                        <p>Balance</p>
+                        <strong id="balance">$0.00</strong>
+                        <b id="balancechange">↑ 8.4% vs last month</b>
+                    </div>
+                    <div class="chart info top-middle">
+                        <p>Income</p>
+                        <strong id="incomereport">$0.00</strong>
+                        <b id="incomechange">↑ 4.1% vs last month</b>
+                    </div>
+                    <div class="chart info top-right">
+                        <p>Expenses</p>
+                        <strong id="expenseTrack">$0.00</strong>
+                        <b id="expenseschange">↓ 2.8% vs last month</b>
+                    </div>
+                    <div class="middle-left">
+                        <div class="overviewheader">
+                            <div>
+                                <h3>Spending Overview</h3>
+                                <p>Daily Spending</p>
+                            </div>
+                            <div>
+                                <select name="" id="monthSelector">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="barchart">
+                            <!-- <div class="spending">
+                                <p id="daily">$42</p>
+                                <div class="bar"></div>
+                                <p>1</p>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="chart middle-right">
+
+                    </div>
+                    <div class="chart bottom">
+                        <h3>Where your money goes</h3>
+                        <h5>Spending by category</h5>
+                        <div class="categories">
+                            <div class="wrapper">
+                                <div class="category">
+                                    <p>Housing</p>
+                                    <p id="housing">38%</p>
+                                </div>
+                                <progress value="38" max="100" id="housingVal"></progress>
+                            </div>
+                            <div class="wrapper">
+                                <div class="category">
+                                    <p>Food</p>
+                                    <p id="food">24%</p>
+                                </div>
+                                <progress value="24" max="100" id="foodVal"></progress>
+                            </div>
+                            <div class="wrapper">
+                                <div class="category">
+                                    <p>Transport</p>
+                                    <p id="transport">16%</p>
+                                </div>
+                                <progress value="16" max="100" id="transportVal"></progress>
+                            </div>
+                            <div class="wrapper">
+                                <div class="category">
+                                    <p>Fun</p>
+                                    <p id="fun">12%</p>
+                                </div>
+                                <progress value="12" max="100" id="funVal"></progress>
+                            </div>
+                            <div class="wrapper">
+                                <div class="category">
+                                    <p>Other</p>
+                                    <p id="other">10%</p>
+                                </div>
+                                <progress value="10" max="100" id="otherVal"></progress>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div class="addexpense">
+        <div class="addheader">
+            <h1>Add an expense</h1>
+            <img src="close.png" alt="" id="close">
+        </div>
+        <label for="description">Description</label>
+        <input type="text" name="" id="description" placeholder="e.g. Groceries">
+        <label for="amount">Amount</label>
+        <input type="text" name="" id="amount" step="0.01">
+        <label for="category">Category</label>
+        <select name="" id="category">
+            <option value="Food">Food</option>
+            <option value="Housing">Housing</option>
+            <option value="Transport">Transport</option>
+            <option value="Fun">Fun</option>
+            <option value="Other">Other</option>
+        </select>
+        <button class="saveExpense">Save Expense</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

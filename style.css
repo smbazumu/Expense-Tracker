@@ -15,6 +15,7 @@ body {
     font-style: normal;
     font-variation-settings: "wdth" 100;
     max-width: 90rem;
+    padding: 1rem 1rem;
 }
 
 body.dark {
@@ -483,7 +484,6 @@ body.dark #expenseDate {
 @media (max-width: 64rem) {
     body {
         width: 100%;
-        padding: 0.675rem 0.875rem;
     }
 
     .container {
@@ -512,6 +512,35 @@ body.dark #expenseDate {
             "mid-r"
             "bottom";
         grid-template-rows: auto;
+    }
+
+    .spending {
+        height: 88%;
+    }
+}
+
+@media (max-width: 48rem) {
+    body {
+        max-width: 48rem;
+        padding: 0.675rem 0.675rem;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .categories {
+        flex-direction: column;
+        gap: 0.625rem;
+    }
+
+    .overviewheader {
+        flex-direction: column;
+        gap: 0.9375rem;
+    }
+
+    .spending {
+        height: 70%;
     }
 }
 

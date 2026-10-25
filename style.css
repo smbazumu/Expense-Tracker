@@ -14,6 +14,7 @@ body {
     font-weight: 400;
     font-style: normal;
     font-variation-settings: "wdth" 100;
+    max-width: 90rem;
 }
 
 body.dark {
@@ -33,7 +34,6 @@ strong {
 
 b {
     font-size: 1rem;
-    margin-right: 0.5rem;
     color: rgb(160, 157, 157);
 }
 
@@ -47,9 +47,7 @@ p {
 
 .container {
     display: flex;
-    padding: 1.25rem;
     gap: 0.9375rem;
-    padding: 0.625rem 3.125rem 1.25rem 3.125rem;
     width: 100%;
 }
 
@@ -57,7 +55,6 @@ p {
     display: flex;
     justify-content: space-between;
     padding: 0.3125rem;
-    margin: 0 3.125rem;
 }
 
 .header p {
@@ -72,7 +69,7 @@ p {
 .menu {
     height: auto;
     padding: 0.9375rem;
-    width: 25%;
+    max-width: 100%;
     background: white;
 }
 
@@ -123,6 +120,7 @@ body.dark .incomeBox {
     font-weight: 400;
     font-style: normal;
     font-variation-settings: "wdth" 100;
+    width: 100%;
 }
 
 body.dark .incomeBoth input {
@@ -144,6 +142,7 @@ body.dark .incomeBoth input {
     outline: none;
     background: white;
     z-index: 1;
+    width: 100%;
 }
 
 body.dark #incomeDescription {
@@ -169,6 +168,7 @@ body.dark #incomeDescription {
 .main {
     width: 100%;
     height: auto;
+    min-width: 0;
 }
 
 .greeting {
@@ -176,15 +176,16 @@ body.dark #incomeDescription {
     justify-content: space-between;
     margin-bottom: 1.25rem;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 0.625rem;
 }
 
 .greeting button {
     background: white;
     border: none;
     border-radius: 0.625rem;
-    padding: 0.3125rem;
+    padding: 0.3125rem 0.9375rem;
     height: 3.125rem;
-    margin-right: 0.625rem;
     font-family: "Inconsolata", monospace;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -233,6 +234,7 @@ body.dark #incomeDescription {
     grid-area: mid-l;
     height: 100%;
     background: white;
+    min-width: 0;
 }
 
 body.dark .middle-left {
@@ -248,11 +250,13 @@ body.dark .middle-left {
     height: 80%;
     gap: 0.3125rem;
     border-bottom: 0.0625rem solid rgb(229, 225, 225);
+    -webkit-overflow-scrolling: touch;
 }
 
 .middle-right {
     grid-area: mid-r;
     background: white;
+    min-width: 0;
 }
 
 body.dark .middle-right {
@@ -265,6 +269,7 @@ body.dark .middle-right {
     height: 100%;
     background: white;
     margin-bottom: 3.125rem;
+    min-width: 0;
 }
 
 body.dark .bottom {
@@ -309,7 +314,7 @@ body.dark .info {
 .spending {
     width: calc(100% / 31);
     height: 100%;
-    min-width: 0;
+    min-width: 0.625rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -347,7 +352,8 @@ body.dark .daily {
 .addexpense {
     display: none;
     flex-direction: column;
-    width: 25rem;
+    width: 90%;
+    max-width: 25rem;
     margin: 0 auto;
     position: fixed;
     top: 50%;
@@ -374,6 +380,7 @@ body.dark .daily {
     font-weight: 400;
     font-style: normal;
     font-variation-settings: "wdth" 100;
+    width: 100%;
 }
 
 .addheader {
@@ -383,7 +390,7 @@ body.dark .daily {
 }
 
 .addheader img {
-    width: 0.875rem;
+    max-width: 0.875rem;
     height: 0.875rem;
 }
 
@@ -447,6 +454,7 @@ body.dark .daily {
     font-weight: 400;
     font-style: normal;
     font-variation-settings: "wdth" 100;
+    width: 100%;
 }
 
 body.dark .budgets {
@@ -462,6 +470,7 @@ body.dark .budgets {
     font-variation-settings: "wdth" 100;
     height: 1.875rem;
     border-radius: 0.625rem;
+    width: 100%;
 }
 
 body.dark #expenseDate {
@@ -472,13 +481,13 @@ body.dark #expenseDate {
 }
 
 @media (max-width: 64rem) {
-    .container {
-        flex-direction: column;
-        padding: 0.625rem 1.25rem 1.25rem 1.25rem;
+    body {
+        width: 100%;
+        padding: 0.675rem 0.875rem;
     }
 
-    .header {
-        margin: 0 1.25rem;
+    .container {
+        flex-direction: column;
     }
 
     .menu {
@@ -492,16 +501,38 @@ body.dark #expenseDate {
     .budgets {
         margin-bottom: 2.5rem;
     }
+
+    .layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "top-l"
+            "top-m"
+            "top-r"
+            "mid-l"
+            "mid-r"
+            "bottom";
+        grid-template-rows: auto;
+    }
 }
 
 @media (max-width: 30rem) {
-    .addexpense {
-        width: 90%;
+    body {
+        max-width: 30rem;
+        padding: 0.675rem 0.675rem;
+    }
+
+    .container {
+        flex-direction: column;
     }
 
     .categories {
         flex-direction: column;
         gap: 0.625rem;
+    }
+
+    .overviewheader {
+        flex-direction: column;
+        gap: 0.9375rem;
     }
 
     .spending {
